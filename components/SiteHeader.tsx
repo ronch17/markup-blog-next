@@ -5,6 +5,7 @@ import {buttonVariants} from "@/components/ui/button";
 import { Icons } from "./icons";
 import {MainNav} from "@/components/mainNav";
 import {MobileNav} from "@/components/MobileNav";
+import {ModeToggle} from "@/components/ModeToggle";
 
 export function SiteHeader() {
     return <header className="sticky top-0 w-full border-b border-border bg-background/95 backdrop-blur support-[backdrop-filter]:bg-background/60">
@@ -24,6 +25,7 @@ export function SiteHeader() {
                         <span className="sr-only">Personal Site</span>
                     </div>
                 </Link>
+                    <ModeToggle />
                 <MobileNav />
                 </nav>
 
