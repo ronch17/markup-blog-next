@@ -4,8 +4,8 @@ export const siteConfig = {
     description: 'A blog about web development',
     author: 'Ron',
     links: {
-        github: 'https://github.com/ronsdev',
-        personalSite: 'https://ronsdev.com'
+        github: 'https://github.com/ronch17',
+        personalSite: 'https://ron-dev.com'
     },
 }
 
