@@ -1,5 +1,6 @@
 import { build } from "velite";
 
+
 /** @type {import('next').NextConfig} */
 export default {
   // othor next config here...
@@ -7,6 +8,12 @@ export default {
     config.plugins.push(new VeliteWebpackPlugin());
     return config;
   },
+  fontLoaders: [
+    {
+      loader: '@next/font/google',
+      options: { subsets: ['latin'] }
+    }
+  ]
 };
 
 class VeliteWebpackPlugin {
@@ -27,3 +34,4 @@ class VeliteWebpackPlugin {
     });
   }
 }
+
