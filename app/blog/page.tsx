@@ -1,25 +1,31 @@
 import { posts } from "#site/content";
 import { PostItem } from "@/components/PostItem";
 import { sortPosts } from "@/lib/utils";
-import {QueryPagination} from "@/components/QueryPagination";
+import { QueryPagination } from "@/components/QueryPagination";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description: "Blog posts",
+};
 
 const POSTS_PER_PAGE = 5;
 
 interface BlogPageProps {
-    searchParams: {
-        page?: string;
-    };
+  searchParams: {
+    page?: string;
+  };
 }
 
-export default async function BlogPage({searchParams}: BlogPageProps ) {
-    const currentPage = Number(searchParams?.page) || 1;
+export default async function BlogPage({ searchParams }: BlogPageProps) {
+  const currentPage = Number(searchParams?.page) || 1;
   const sortedPosts = sortPosts(posts.filter((post) => post.published));
-    const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
+  const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
 
-    const displayPosts = sortedPosts.slice(
-        POSTS_PER_PAGE * (currentPage - 1),
-        POSTS_PER_PAGE * currentPage,
-    );
+  const displayPosts = sortedPosts.slice(
+    POSTS_PER_PAGE * (currentPage - 1),
+    POSTS_PER_PAGE * currentPage,
+  );
 
   return (
     <div className="container max-w-4xl py-6 lg:py-10">
@@ -51,7 +57,7 @@ export default async function BlogPage({searchParams}: BlogPageProps ) {
       ) : (
         <p>No posts found</p>
       )}
-        <QueryPagination totalPages={totalPages} className="justify-end mt-4" />
+      <QueryPagination totalPages={totalPages} className="justify-end mt-4" />
     </div>
   );
 }
