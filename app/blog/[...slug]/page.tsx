@@ -5,6 +5,9 @@ import { Metadata } from "next";
 import "@/styles/mdx.css";
 
 import { siteConfig } from "@/config/site";
+import { Button, buttonVariants } from "@/components/ui/button";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 interface PostPageProps {
   params: {
     slug: string[];
@@ -71,14 +74,26 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   return (
-    <article className="container py-6 prose dark:prose-invert max-w-3xl mx-auto">
-      <h1 className="mb-2">{post.title}</h1>
+    <>
+      <article className="container py-6 prose dark:prose-invert max-w-3xl mx-auto">
+        <h1 className="mb-2">{post.title}</h1>
 
-      {post.description ? (
-        <p className="text-xl mt-0 text-muted-foreground">{post.description}</p>
-      ) : null}
-      <hr className="my-4" />
-      <MDXContent code={post.body} />
-    </article>
+        {post.description ? (
+          <p className="text-xl mt-0 text-muted-foreground">
+            {post.description}
+          </p>
+        ) : null}
+        <hr className="my-4" />
+        <MDXContent code={post.body} />
+        <Button>
+          <Link
+            href="/blog"
+            className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-fit")}
+          >
+            Back to articles
+          </Link>
+        </Button>
+      </article>
+    </>
   );
 }

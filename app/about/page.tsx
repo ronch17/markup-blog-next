@@ -32,7 +32,21 @@ export default async function AboutPage() {
           </p>
         </div>
         <p className="text-muted-foreground text-lg py-4">
-          lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+          Frontend Developer with a passion for creating beautiful and
+          functional web applications. I have a strong background in web
+          development and have worked with a variety of technologies including
+          HTML, SCSS, JavaScript, React, Node, Wordpress and Php. Having an
+          experience of more than four years, I&apos;ve been working for
+          personal clients and fintech companies, I developed unique and
+          creative web applications, authentication systems, maintained http
+          requests, worked with Docker and maintained linux based vps&apos;s,
+          added GSAP utilities which enhanced the companies business and user
+          experience. I am a detail-oriented and autodidact person who enjoys
+          bringing new ideas to life, making sure for the best user experience
+          and delivering the best results. I&apos;m constantly learning and
+          keeping up to date with the latest web development trends and best
+          practices to ensure that the applications I build are modern, secure,
+          and maintainable.
         </p>
       </div>
     </div>
